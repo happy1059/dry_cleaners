@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PutOrderActivity">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
+        android:background="#f0f0f0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f0f0f0">
+
+            <!-- Title Bar -->
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="24sp"
+                android:textColor="#000000"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:textAlignment="center" />
+
+            <!-- EditTexts for customer details -->
+            <LinearLayout
+                android:id="@+id/customerDetailsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleTextView"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Customer Name EditText -->
+                <EditText
+                    android:id="@+id/customer_name_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="name"
+                    android:hint="@string/cname"
+                    android:textColorHint="@color/black"
+                    android:inputType="text"
+                    android:minHeight="48dp" />
+
+                <!-- Room Number EditText -->
+                <EditText
+                    android:id="@+id/room_number_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="postalAddress"
+                    android:hint="@string/rnumber"
+                    android:textColorHint="@color/black"
+                    android:inputType="number"
+                    android:minHeight="48dp" />
+
+                <!-- Phone Number EditText -->
+                <EditText
+                    android:id="@+id/phone_number_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="phone"
+                    android:hint="@string/phone"
+                    android:textColorHint="@color/black"
+                    android:inputType="phone"
+                    android:minHeight="48dp" />
+            </LinearLayout>
+
+            <!-- Cards Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/customerDetailsLayout"
+                android:layout_marginTop="-7dp"
+                android:orientation="vertical"
+                android:padding="8dp"
+                tools:ignore="ExtraText">
+
+                <!-- Row 1 -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+
+                    <!-- Card 1 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/card_margin"
+                        android:background="@color/background_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/card_padding" >
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="@dimen/card_image_width"
+                            android:layout_height="@dimen/card_image_height"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/tshirt" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:text="T-shirt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_primary"
+                            android:textSize="@dimen/card_text_size_large" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small" />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb1"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb1" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!--2nd card-->
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/card_margin"
+                        android:background="@color/background_color"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:padding="@dimen/card_padding">
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="@dimen/card_image_width"
+                            android:layout_height="@dimen/card_image_height"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/shirt" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:text="Shirt"
+                            android:textColor="@color/text_color_primary"
+                            android:textSize="@dimen/card_text_size_large" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:text="₹12"
+                            android:textColor="@color/text_color_primary"
+                            android:textSize="@dimen/card_text_size_large" />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb2"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp" />
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+                                android:id="@+id/qt2"/>
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb2"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--3rd card-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/card_margin"
+                        android:background="@color/background_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/card_padding">
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="@dimen/card_image_width"
+                            android:layout_height="@dimen/card_image_height"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/sando" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:text="Sando"
+                            android:textColor="@color/text_color_primary"
+                            android:textSize="@dimen/card_text_size_large" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small"  />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb3"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp"  />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb3" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--4th card-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="#FFFFFF"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="@dimen/card_image_width"
+                            android:layout_height="@dimen/card_image_height"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/hoodie" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:text="Hoodie"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_primary"
+                            android:textSize="@dimen/card_text_size_large" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small" />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb4"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb4" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Card 5 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/card_margin"
+                        android:background="@color/background_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/card_padding" >
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="@dimen/card_image_width"
+                            android:layout_height="@dimen/card_image_height"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/upper" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:text="Track Suit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_primary"
+                            android:textSize="@dimen/card_text_size_large" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small" />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb5"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb5" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                </HorizontalScrollView>
+
+                <!--2nd ROW -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <!-- Card 6 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/card_margin"
+                        android:background="@color/background_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/card_padding" >
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="@dimen/card_image_width"
+                            android:layout_height="@dimen/card_image_height"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pent_jeans" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:text="JEANS/PENT"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_primary"
+                            android:textSize="@dimen/card_text_size_large" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small"/>
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb6"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb6" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- card 7 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/card_margin"
+                        android:background="@color/background_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/card_padding" >
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="@dimen/card_image_width"
+                            android:layout_height="@dimen/card_image_height"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/lower" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:text="LOWER"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_primary"
+                            android:textSize="@dimen/card_text_size_large" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small"/>
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb7"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb7" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                <!-- 8th CARD -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/card_margin"
+                        android:background="@color/background_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/card_padding" >
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="@dimen/card_image_width"
+                            android:layout_height="@dimen/card_image_height"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/shorts" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="SHORTS"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small" />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb8"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb8" />
+                        </LinearLayout>                    </LinearLayout>
+
+                    <!-- 9TH CARD-->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/card_margin"
+                        android:background="@color/background_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/card_padding" >
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/garm_lower"
+                            tools:ignore="ImageContrastCheck" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="गर्म LOWER"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small" />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb9"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb9" />
+                        </LinearLayout>                    </LinearLayout>
+                </LinearLayout>
+                </HorizontalScrollView>
+
+                <!--3rd ROW -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <!-- Card 10 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="#FFFFFF"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="192dp"
+                            android:layout_height="192dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/chadar" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="चादर\n(Single)"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small" />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb10"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb10" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- card 11 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:background="#FFFFFF"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="192dp"
+                            android:layout_height="192dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/double_chadar" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="चादर\n(DOUBLE)"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹30"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small" />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb11"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb11" />
+                        </LinearLayout>                    </LinearLayout>
+
+                    <!-- 12th card  -->
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:background="#FFFFFF"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="192dp"
+                            android:layout_height="192dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/garm_chadar" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="गर्म चादर \n(Single)"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹30"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small" />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb12"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb12" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- 13th card-->
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:background="#FFFFFF"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="192dp"
+                            android:layout_height="192dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/double_bed_blanket" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="गर्म चादर\n(DOUBLE)"
+                            android:textColor="#000000"
+                            android:textSize="16sp" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹30"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small" />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb13"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb13" />
+                        </LinearLayout>                    </LinearLayout>
+                </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- 4th row -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <!--14th card -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/card_margin"
+                        android:background="@color/background_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/card_padding" >
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="@dimen/card_image_width"
+                            android:layout_height="@dimen/card_image_height"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/single_bed_blanket" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:text="कंबल \n(Single)"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_primary"
+                            android:textSize="@dimen/card_text_size_large" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹150"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small"/>
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb14"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb14" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Card 15 -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/card_margin"
+                        android:background="@color/background_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/card_padding">
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="@dimen/card_image_width"
+                            android:layout_height="@dimen/card_image_height"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/double_bed_blanket" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:text="कंबल \n(DOUBLE)"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_primary"
+                            android:textSize="@dimen/card_text_size_large"/>
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹250"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small" />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb15"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb15" />
+                        </LinearLayout>                    </LinearLayout>
+
+                    <!-- card 16 -->
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="@dimen/card_margin"
+                        android:background="@color/background_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/card_padding">
+
+                        <!-- Item Image -->
+                        <ImageView
+                            android:layout_width="@dimen/card_image_width"
+                            android:layout_height="@dimen/card_image_height"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/khes" />
+
+                        <!-- Item Name -->
+                        <TextView
+                            android:text="खेस/लोइ "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_primary"
+                            android:textSize="@dimen/card_text_size_large" />
+
+                        <!-- Item Price -->
+                        <TextView
+                            android:text="₹40"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:textColor="@color/text_color_secondary"
+                            android:textSize="@dimen/card_text_size_small" />
+
+                        <!-- Quantity +/- Buttons -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/card_margin"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Minus Button -->
+                            <Button
+                                android:id="@+id/mb16"
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="match_parent"
+                                android:text="@string/minus"
+                                android:textSize="20dp"/>
+
+                            <!-- Quantity Text -->
+                            <TextView
+                                android:id="@+id/qt16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="8dp"
+                                android:paddingEnd="8dp"
+                                android:text="@string/value"
+                                android:textColor="#000000"
+                                android:textSize="16sp" />
+
+                            <!-- Plus Button -->
+                            <Button
+                                android:layout_width="@dimen/button_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/plus"
+                                android:textSize="20dp"
+                                android:id="@+id/pb16" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

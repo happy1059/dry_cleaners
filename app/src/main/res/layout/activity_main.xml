@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        android:background="@drawable/border"
+        android:padding="55dp"
+        android:layout_marginStart="10dp">
+
+        <ImageView
+            android:id="@+id/imageView_logo"
+            android:layout_width="264dp"
+            android:layout_height="221dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="180dp"
+            app:srcCompat="@drawable/img"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/textView_app_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView_logo"
+            android:text="Welcome to My App"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="#120F0F"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textView_main_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_app_name"
+            android:layout_marginTop="10dp"
+            android:text="Please login to continue"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_main_head"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="Sign In"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textView_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_login"
+            android:layout_marginTop="30dp"
+            android:text="Don't have an account yet?"
+            android:textAlignment="center"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/button_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_register"
+            android:text="Register here"
+            android:textColor="#800080"
+            android:textAlignment="center" />
+
+    </RelativeLayout>
+
+</ScrollView>

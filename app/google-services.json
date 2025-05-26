@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "729871559059",
+    "project_id": "shop-19a56",
+    "storage_bucket": "shop-19a56.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729871559059:android:109804643b80b912eea066",
+        "android_client_info": {
+          "package_name": "com.happy.second"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD50GY26x6GdFrpc-k-va2fvlE_QG38E5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
